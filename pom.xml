@@ -21,6 +21,7 @@
 
     <modules>
         <module>spring-boot-week01</module>
+        <module>spring-boot-config</module>
     </modules>
 
     <properties>
@@ -57,4 +58,7 @@
             </plugin>
         </plugins>
     </build>
+
+
+
 </project>
