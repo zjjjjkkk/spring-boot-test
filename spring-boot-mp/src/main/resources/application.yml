@@ -1,0 +1,24 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: "spring-boot-study"
+
+my:
+  mood:
+    today: 礼拜five
+    content: 这作业怎么这么难
+    author: zjk
+
+  feature:
+    helloSwitch: true
+    closeMsg: "接口维护，敬请期待！"
+kunjz:
+  sms:
+    ccp:
+      server-ip: app.cloopen.com
+      port: 8883
+      account-sid: 2c94811c9860a9c4019917c385cc1e91
+      account-token: f2e6a1588f904dd3b82f0587c117c06b
+      app-id: 2c94811c9860a9c4019917c387581e99
+      template-id: 1
