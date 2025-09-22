@@ -1,12 +1,12 @@
-package top.zjk.boot.mp.service.impl;
+package top.zjk.boot.mp01.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import top.zjk.boot.mp.Mapper.UserAccountMapper;
-import top.zjk.boot.mp.entity.UserAccount;
-import top.zjk.boot.mp.service.UserAccountService;
+import top.zjk.boot.mp01.mapper.UserAccountMapper;
+import top.zjk.boot.mp01.entity.UserAccount;
+import top.zjk.boot.mp01.service.UserAccountService;
 
 import java.util.List;
 

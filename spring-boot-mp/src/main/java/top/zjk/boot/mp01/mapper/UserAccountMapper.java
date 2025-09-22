@@ -1,8 +1,8 @@
-package top.zjk.boot.mp.Mapper;
+package top.zjk.boot.mp01.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import top.zjk.boot.mp.entity.UserAccount;
+import top.zjk.boot.mp01.entity.UserAccount;
 /**
  * @author zjk
  */

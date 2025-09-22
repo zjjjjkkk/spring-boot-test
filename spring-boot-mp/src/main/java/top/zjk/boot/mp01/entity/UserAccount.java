@@ -1,11 +1,10 @@
-package top.zjk.boot.mp.entity;
+package top.zjk.boot.mp01.entity;
 
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
 import lombok.Data;
-import lombok.experimental.Accessors;
 
 import java.io.Serial;
 import java.io.Serializable;

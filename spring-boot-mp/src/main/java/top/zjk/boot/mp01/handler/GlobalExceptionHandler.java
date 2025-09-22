@@ -1,12 +1,12 @@
-package top.zjk.boot.mp.handler;
+package top.zjk.boot.mp01.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import top.zjk.boot.mp.common.ApiResponse;
-import top.zjk.boot.mp.exception.BusinessException;
-import top.zjk.boot.mp.exception.ErrorCode;
+import top.zjk.boot.mp01.common.ApiResponse;
+import top.zjk.boot.mp01.exception.BusinessException;
+import top.zjk.boot.mp01.exception.ErrorCode;
 
 @RestControllerAdvice
 @Slf4j

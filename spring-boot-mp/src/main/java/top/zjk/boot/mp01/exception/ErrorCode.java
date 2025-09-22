@@ -1,4 +1,4 @@
-package top.zjk.boot.mp.exception;
+package top.zjk.boot.mp01.exception;
 
 
 import lombok.AllArgsConstructor;

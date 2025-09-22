@@ -1,2 +1,12 @@
-package top.zjk.boot.exception;public class ExceptionApplication {
+package top.zjk.boot.exception;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ExceptionApplication {
+    public static void main(String[] args){
+        SpringApplication.run(ExceptionApplication.class, args);
+    }
 }

@@ -1,18 +1,27 @@
-server:
-  port: 8888
-
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mp_demo?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true
+    # 本地开发库
+    url: jdbc:mysql://localhost:3306/mp_demo?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: 1234
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 10000
+      pool-name: HikariCP
 
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    db-config:
-      logic-delete-field: deleted
-      logic-delete-value: 1
+server:
+  port: 8888
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    root: INFO
+    top.zjk.boot.mp: DEBUG
+  file:
+    # Windows 友好路径，可按需调整
+    name: D:/logs/myapp.log

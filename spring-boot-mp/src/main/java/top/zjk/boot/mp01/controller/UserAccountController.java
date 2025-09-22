@@ -1,19 +1,17 @@
-package top.zjk.boot.mp.controller;
+package top.zjk.boot.mp01.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import top.zjk.boot.mp.Mapper.UserAccountMapper;
-import top.zjk.boot.mp.common.ApiResponse;
-import top.zjk.boot.mp.entity.UserAccount;
-import top.zjk.boot.mp.exception.BusinessException;
-import top.zjk.boot.mp.exception.ErrorCode;
-import top.zjk.boot.mp.service.UserAccountService;
+import top.zjk.boot.mp01.common.ApiResponse;
+import top.zjk.boot.mp01.entity.UserAccount;
+import top.zjk.boot.mp01.exception.BusinessException;
+import top.zjk.boot.mp01.exception.ErrorCode;
+import top.zjk.boot.mp01.service.UserAccountService;
 
 import java.util.List;
 

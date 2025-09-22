@@ -1,7 +1,6 @@
-package top.zjk.boot.mp.exception;
+package top.zjk.boot.mp01.exception;
 
 import lombok.Getter;
-import top.zjk.boot.mp.exception.ErrorCode;
 
 @Getter
 public class BusinessException extends RuntimeException {

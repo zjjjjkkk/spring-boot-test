@@ -1,10 +1,9 @@
-package top.zjk.boot.mp.utils;
+package top.zjk.boot.mp01.utils;
 
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class DataFakerUtilTest {
 

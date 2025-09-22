@@ -1,4 +1,4 @@
-package top.zjk.boot.mp.handler;
+package top.zjk.boot.mp01.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;

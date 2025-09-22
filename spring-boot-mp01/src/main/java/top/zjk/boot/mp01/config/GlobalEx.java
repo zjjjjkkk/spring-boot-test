@@ -1,25 +1,13 @@
 package top.zjk.boot.mp01.config;
 
-import com.baomidou.mybatisplus.annotation.DbType;
-import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-/**
- * @author zjk
- */
-@Configuration
-public class MybatisPlusConfig {
+import org.springframework.web.bind.annotation.*;
+import top.zjk.boot.mp01.common.R;
 
-    @Bean
-    public MybatisPlusInterceptor mybatisPlusInterceptor() {
-        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
-        // 分页插件
-        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
-        // ✅ 乐观锁插件（必须）
-        interceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor());
-        return interceptor;
+@RestControllerAdvice
+public class GlobalEx {
+    @ExceptionHandler(Exception.class)
+    public R<Void> handle(Exception e) {
+        return R.fail(e.getMessage());
     }
 }

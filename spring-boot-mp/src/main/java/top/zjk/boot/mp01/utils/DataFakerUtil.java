@@ -1,11 +1,11 @@
-package top.zjk.boot.mp.utils;
+package top.zjk.boot.mp01.utils;
 
 import jakarta.annotation.Resource;
 import net.datafaker.Faker;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
-import top.zjk.boot.mp.entity.UserAccount;
-import top.zjk.boot.mp.service.UserAccountService;
+import top.zjk.boot.mp01.entity.UserAccount;
+import top.zjk.boot.mp01.service.UserAccountService;
 
 import java.util.List;
 import java.util.Locale;

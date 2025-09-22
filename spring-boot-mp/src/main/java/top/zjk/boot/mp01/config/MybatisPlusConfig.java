@@ -1,4 +1,4 @@
-package top.zjk.boot.mp.config;
+package top.zjk.boot.mp01.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;

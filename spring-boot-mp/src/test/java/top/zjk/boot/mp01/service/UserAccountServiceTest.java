@@ -1,4 +1,4 @@
-package top.zjk.boot.mp.service;
+package top.zjk.boot.mp01.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,9 +6,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import top.zjk.boot.mp.entity.UserAccount;
-import top.zjk.boot.mp.Mapper.UserAccountMapper;
-import top.zjk.boot.mp.service.impl.UserAccountServiceImpl;
+import top.zjk.boot.mp01.entity.UserAccount;
+import top.zjk.boot.mp01.mapper.UserAccountMapper;
+import top.zjk.boot.mp01.service.impl.UserAccountServiceImpl;
 
 import java.time.LocalDateTime;
 

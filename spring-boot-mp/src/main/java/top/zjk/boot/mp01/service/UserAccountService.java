@@ -1,7 +1,7 @@
-package top.zjk.boot.mp.service;
+package top.zjk.boot.mp01.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import top.zjk.boot.mp.entity.UserAccount;
+import top.zjk.boot.mp01.entity.UserAccount;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package top.zjk.boot.mp.common;
+package top.zjk.boot.mp01.common;
 
 import lombok.Getter;
 
