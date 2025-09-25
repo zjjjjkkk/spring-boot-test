@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.kunjz.service.SmsService;
 
+/**
+ * @author zjk
+ */
 @RestController
 public class SmsController {
     @Resource

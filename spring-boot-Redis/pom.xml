@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 继承父工程 -->
+    <parent>
+        <groupId>top.kunjz</groupId>
+        <artifactId>spring-boot-course</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring-boot-Redis</artifactId>
+    <name>Redis Demo Service</name>
+    <description>Redis + SMS service demo</description>
+
+    <dependencies>
+        <!-- 父工程已包含：spring-boot-starter-web / data-redis / lombok / fastjson2 / test -->
+        <!-- 子模块独有依赖 -->
+
+
+        <!-- 容联云短信 SDK（本地 jar 已安装到 Maven） -->
+        <dependency>
+            <groupId>com.cloopen</groupId>
+            <artifactId>ccprestsms</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cloopen</groupId>
+            <artifactId>java-sms-sdk</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- spring-boot 打包与运行 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
