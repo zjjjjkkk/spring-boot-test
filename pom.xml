@@ -104,6 +104,8 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <!-- 仅声明版本，子模块需显式引入 -->

@@ -1,0 +1,69 @@
+spring:
+  # 1. 邮件配置
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 3348805775@qq.com
+    password: lkfyceshjmzddaac  # QQ邮箱SMTP授权码（已验证有效）
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  # 2. 数据库配置（Quartz 任务持久化 + 业务数据库）
+  datasource:
+    url: jdbc:mysql://localhost:3306/my_mp?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # 3. Quartz 定时任务配置
+  quartz:
+    job-store-type: jdbc  # 任务持久化到数据库（替代内存模式）
+    jdbc:
+      initialize-schema: always  # 每次启动初始化 Quartz 表结构（首次启动后可改为 embedded）
+    properties:
+      org:
+        quartz:
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10  # 定时任务核心线程数
+            threadNamePrefix: quartz-thread  # 线程名称前缀
+            threadPriority: 5  # 线程优先级（1-10，默认5）
+
+# 邮件收件人配置
+email:
+  recipients: 3348805775@qq.com
+
+# 数据库备份配置
+db:
+  backup:
+    host: localhost          # 数据库地址
+    port: 3306               # 数据库端口
+    username: root           # 数据库用户名
+    password: 1234        # 数据库密码（与 datasource 保持一致）
+    db-name: my_mp     # 需要备份的数据库名（与 datasource 保持一致）
+    local-path: ./db-backup/ # 本地备份文件存储路径
+
+# 服务器健康监控阈值配置
+server:
+  monitor:
+    cpu-threshold: 80.0  # CPU使用率阈值（%）
+    memory-threshold: 50.0  # 内存使用率阈值（%）
+
+# 日志配置
+logging:
+  level:
+    com.baomidou.mybatisplus.samples: debug  # MyBatis-Plus 日志级别（调试时打印 SQL）
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true   # 开启数据库字段下划线转Java驼峰命名
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 调试时打印 SQL 到控制台
+  global-config:
+    db-config:
+      logic-delete-field: deleted  # 全局逻辑删除字段名
+      logic-delete-value: 1  # 逻辑已删除的值
+      logic-not-delete-value: 0  # 逻辑未删除的值
