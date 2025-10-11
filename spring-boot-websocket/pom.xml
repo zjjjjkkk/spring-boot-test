@@ -2,43 +2,89 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- 继承父工程 -->
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.6</version>
-        <relativePath/>
+        <groupId>top.kunjz</groupId>
+        <artifactId>spring-boot-course</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!-- 父工程pom.xml的相对路径（根据实际目录结构调整，若在同一级目录则无需修改） -->
+        <relativePath>../pom.xml</relativePath>
     </parent>
+
     <groupId>top.kunjz</groupId>
     <artifactId>spring-boot-websocket</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-websocket</name>
     <description>spring-boot-websocket</description>
+
     <properties>
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
-        <!-- WebSocket 核心依赖 -->
+        <!-- WebSocket依赖（基于父工程的spring-boot-starter-web扩展） -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
-        <!-- Lombok 依赖（用于日志注解） -->
+
+        <!-- MyBatis-Plus（使用父工程管理的版本） -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+        </dependency>
+
+        <!-- MySQL驱动（使用父工程管理的版本） -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- 工具类依赖（复用父工程的lombok、hutool等） -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
         </dependency>
 
+        <!-- 测试依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.46</version> <!-- 版本号可根据实际需要调整 -->
+        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 解决lombok注解编译问题 -->
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>

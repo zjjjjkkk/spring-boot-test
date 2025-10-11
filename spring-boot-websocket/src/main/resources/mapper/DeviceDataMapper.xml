@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 命名空间，对应 DeviceDataMapper.java 的完整路径-->
+<mapper namespace="top.kunjz.springbootwebsocket.mapper.DeviceDataMapper">
+
+    <!-- 获取每个设备的最新数据，resultType 后面的类型直接写实体类，不用带完整包名，因为 application.yml 里做了配置 -->
+    <!--ROW_NUMBER 是窗口函数，可以自行借助AI理解SQL，这里的id一定要和DeviceDataMapper.java中的方法名一致！-->
+    <select id="selectLatestDataForEachDevice" resultType="DeviceData">
+        SELECT *
+        FROM (SELECT dd.*,
+                     ROW_NUMBER() OVER (PARTITION BY dd.device_id, dd.metric_name ORDER BY dd.record_time DESC) AS rn
+              FROM device_data dd) ranked
+        WHERE ranked.rn = 1
+    </select>
+
+    <!-- 获取设备历史数据 -->
+    <select id="selectHistoryData" resultType="DeviceData">
+        SELECT *
+        FROM device_data
+        WHERE device_id = #{deviceId}
+          AND record_time >= DATE_SUB(NOW(), INTERVAL #{hours} HOUR)
+        ORDER BY record_time DESC
+    </select>
+
+    <!-- 获取设备最新单条数据 -->
+    <select id="selectLatestByDeviceId" resultType="DeviceData">
+        SELECT *
+        FROM device_data
+        WHERE device_id = #{deviceId}
+        ORDER BY record_time DESC
+            LIMIT 1
+    </select>
+
+</mapper>

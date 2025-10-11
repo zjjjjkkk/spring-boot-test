@@ -76,7 +76,7 @@ public class UserController {
     // 查看部门信息（仅ADMIN角色可访问）
     @GetMapping("/department")
     @RequireRole(value = "ADMIN")
-    public Result<String> getDepartmentInfo() {
+    public Result<String>  getDepartmentInfo() {
         return Result.ok("部门信息：技术部、产品部、运营部");
     }
 }

@@ -10,11 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * 简单时间推送WebSocket处理器
- *
- * @author moqi
- */
+
 @Slf4j
 @Component
 public class SimpleTimeWebSocketHandler implements WebSocketHandler {
